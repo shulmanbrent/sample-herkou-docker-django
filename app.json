@@ -1,6 +1,7 @@
 {
   "name": "Memcached Cloud Django Sample",
   "description": "Django app demonstarting Memcached Cloud deployment to Heroku",
+  "image": "heroku/python",
   "repository": "https://github.com/RedisLabs/memcachedcloud-django-sample",
   "logo": "https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/icons/1321/original.png",
   "keywords": ["python", "django", "memcached", "memcached cloud" ],

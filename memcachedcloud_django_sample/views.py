@@ -2,9 +2,11 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.core.cache import cache
 import sys
+import os
 
 def home(request):
-  return render_to_response('index.html', {})
+  # return render_to_responseonse('index.html', {})
+  return HttpResponse("FILE_UPLOAD_HANDLERS = ()")
 
 def command(request):
   try:

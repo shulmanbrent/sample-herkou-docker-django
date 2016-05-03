@@ -1,0 +1,40 @@
+web:
+  build: .
+  command: 'gunicorn memcachedcloud_django_sample.wsgi'
+  working_dir: /app/user
+  environment:
+    PORT: 8080
+    MEMCACHEDCLOUD_SERVERS: 'memcachedcloud:11211'
+  ports:
+    - '8080:8080'
+  links:
+    - memcachedcloud
+dev:
+  restart: always
+  build: .
+  command: 'gunicorn memcachedcloud_django_sample.wsgi --reload'
+  working_dir: /app/user
+  environment:
+    PORT: 8080
+    MEMCACHEDCLOUD_SERVERS: 'memcachedcloud:11211'
+  ports:
+    - '8080:8080'
+  volumes:
+    - '.:/app/user'
+  links:
+    - memcachedcloud
+shell:
+  build: .
+  command: bash
+  working_dir: /app/user
+  environment:
+    PORT: 8080
+    MEMCACHEDCLOUD_SERVERS: 'memcachedcloud:11211'
+  ports:
+    - '8080:8080'
+  links:
+    - memcachedcloud
+  volumes:
+    - '.:/app/user'
+memcachedcloud:
+  image: memcached

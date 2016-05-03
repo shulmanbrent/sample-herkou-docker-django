@@ -6,7 +6,7 @@ import os
 
 def home(request):
   # return render_to_responseonse('index.html', {})
-  return HttpResponse("FILE_UPLOAD_HANDLERS = ()")
+  return HttpResponse("Yooooo")
 
 def command(request):
   try:
